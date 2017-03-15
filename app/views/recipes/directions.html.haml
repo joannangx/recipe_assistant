@@ -1,0 +1,5 @@
+%h1 Directions
+%div{:class => "dir_list"}
+	- @directions.each do |d|
+		= simple_format(d["Directions"])
+		%br

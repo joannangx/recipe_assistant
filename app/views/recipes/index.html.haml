@@ -1,0 +1,7 @@
+%h1 Recipe Assistant
+%br
+%div{:class => "all_recipes"}
+	- @recipes.each do |recipe|
+		= render 'shared/recipe', :recipe => recipe
+
+= link_to "ADD", new_path, method: :get

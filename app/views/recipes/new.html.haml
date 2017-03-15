@@ -1,0 +1,15 @@
+%h1 Add a new Recipe!
+
+= form_tag :action => 'add', :method => :get do
+	= label :recipe, :recipeName, 'Dish Name'
+	= text_field :recipe, :recipeName
+	%br
+	= label :recipe, :ingredients, 'Ingredients'
+	= text_area :recipe, :ingredients
+	%br
+	= label :recipe, :directions
+	= text_area :recipe, :directions
+	%br
+	= "upload image"
+	%br
+	= submit_tag 'Add Recipe'

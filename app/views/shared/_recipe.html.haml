@@ -1,0 +1,5 @@
+%div{:class => "dish"}
+	= image_tag(recipe["Image_URL"], :class => "recipe_image")
+	= link_to recipe["RecipeName"], recipe_path(:dish => recipe["RecipeName"]), method: :get
+	= link_to "ingredients", ingredients_path(:dish => recipe["RecipeName"]), method: :get
+	= link_to "directions", directions_path(:dish => recipe["RecipeName"]), method: :get
