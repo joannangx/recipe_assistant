@@ -15,6 +15,7 @@
 
 %div{:class => "index_page"}
 	%h1 Recipe Assistant
+	= text_field :recipe, :search, :placeholder => "Search", :class => "search_bar"
 	%br
 	%div{:class => "all_recipes"}
 		- @recipes.each do |recipe|
