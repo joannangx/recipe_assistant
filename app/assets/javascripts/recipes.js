@@ -20,8 +20,7 @@ $(document).ready(function show_page() {
     $('.back').hide();
     $('.back').show(300);
     $('.back_div').show(300);
-    $('.index_page').slideDown(300);
-    $('.index_page').hide(400);
+    $('.index_page').hide();
 	});
 });
 

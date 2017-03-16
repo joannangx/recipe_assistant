@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html, body {
-	background: #d9eef9;
+	//background: #d9eef9;
+	background: #f2f5f7;
 	min-height: 100%;
 	text-align: center;
 	font-family: Athelas;
@@ -104,9 +105,11 @@ a:hover {
 }
 
 .add_button {
-	width: 4%;
+	//width: 4%;
+	height: 35px;
 	float: right;
-	padding-right: 21%;
+	//padding-right: 21%;
+	padding-right: 20%;
 }
 
 
@@ -148,7 +151,7 @@ a:hover {
 .list {
 	font-size: 18px;
 	margin: 0 auto;
-	text-align:left;
+	text-align: left;
 	line-height: 140%;
 	display: table;
 }
@@ -320,8 +323,10 @@ input[type=text].search_bar {
     	font-size: 10px;
     }
     .add_button {
-    	width: 15%;
-    	padding-right: 3%;
+    	//width: 15%;
+    	height: 40px;
+    	//padding-right: 3%;
+    	padding-right: 1%;
     }
     .pages {
     	width: 100%;

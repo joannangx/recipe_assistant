@@ -15,7 +15,6 @@
 					- ingredients = "\n" + i["Ingredients"]
 					- ingredients = ingredients.gsub( / *\n+/, "\n- " )
 					= simple_format(ingredients)
-		%br
 	%br
 	%div{:class => "recipe_page_directions"}
 		%h2{:class => "secondary_header"} Directions

@@ -6,25 +6,12 @@ class RecipesController < ApplicationController
   end
 
   def show
-  	@name = params[:dish]
-  	@ingredients = get_recipe_attr(@name, "Ingredients")
-  	@directions = get_recipe_attr(@name, "Directions")
-    @image = get_recipe_attr(@name, "Image_URL")
-
-/
-    respond_to do |format|
-      format.html { redirect_to show_path(:dish => recipe["RecipeName"]) }
-      format.js
-    end/
   end	
 
   def ingredients
-    @ingredients = get_recipe_attr(params[:dish], "Ingredients")
-    puts @ingredients
   end
 
   def directions
-    @directions = get_recipe_attr(params[:dish], "Directions")
   end	
 
   def new
