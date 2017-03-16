@@ -8,7 +8,8 @@
 	%div{:class => "name_box"}
 		= link_to recipe["RecipeName"], "#", :class => "link recipe_name", :data => {:id => r_name, :page => "recipe"}
 	%div{:class => "ingredients_box"}
-		= link_to "Ingredients", "#", :class => "link ingredients_link", :data => {:id => r_name, :page => "ingredients"}
+		/= link_to "Ingredients", "#", :class => "link ingredients_link", :data => {:id => r_name, :page => "ingredients"}
+		= link_to image_tag("ingredients.png", :class => "icon"), "#", :class => "link ingredients_link", :data => {:id => r_name, :page => "ingredients"}
 	%div{:class => "directions_box"}
-		= link_to "Directions", "#", :class => "link directions_link", :data => {:id => r_name, :page => "directions"}
-%br
+		/= link_to "Directions", "#", :class => "link directions_link", :data => {:id => r_name, :page => "directions"}
+		= link_to image_tag("directions.png", :class => "icon"), "#", :class => "link ingredients_link", :data => {:id => r_name, :page => "directions"}

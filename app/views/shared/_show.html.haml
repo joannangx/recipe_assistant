@@ -12,19 +12,18 @@
 			%h2{:class => "secondary_header"} Ingredients
 			%div{:class => "list"}
 				- ingredients.each do |i|
-					= simple_format(i["Ingredients"])	
+					- ingredients = "\n" + i["Ingredients"]
+					- ingredients = ingredients.gsub( / *\n+/, "\n- " )
+					= simple_format(ingredients)
 		%br
 	%br
 	%div{:class => "recipe_page_directions"}
 		%h2{:class => "secondary_header"} Directions
 		%div{:class => "list", :id => "list_directions"}
 			- directions.each do |d|
-				= simple_format(d["Directions"])
-	%br
-	%br
-	%br
-	%br
-	%br
+				- directions = "\n" + d["Directions"]
+				- directions = directions.gsub( / *\n+/, "\n- " )
+				= simple_format(directions)
 	%br
 	%br
 	%br

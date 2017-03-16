@@ -1,7 +1,6 @@
 - r_name = recipe["RecipeName"].parameterize.underscore
 %div{:class => "pages ingredients_pages", :id => "ingredients_#{r_name}"}
 	%br
-	%br
 	%div{:class => "ingredients_images"}
 		- if !recipe["Image_URL"].nil?
 			= image_tag(recipe["Image_URL"], :class => "ing_image")
@@ -10,8 +9,14 @@
 	%h2{:class => "indiv_pages_header"} Ingredients for #{recipe["RecipeName"]}
 	%div{:class => "list_ing"}
 		- ingredients.each do |i|
-			= simple_format(i["Ingredients"])
+			- ingredients = "\n" + i["Ingredients"]
+			- ingredients = ingredients.gsub( / *\n+/, "\n- " )
+			= simple_format(ingredients)
 			%br
+	%br
+	%br
+	%br
+	%br
 	%br
 	%br
 	%br

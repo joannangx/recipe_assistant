@@ -4,8 +4,9 @@
 
 html, body {
 	background: #d9eef9;
-	height: 100%;
+	min-height: 100%;
 	text-align: center;
+	font-family: Athelas;
 }
 
 h1 {
@@ -13,6 +14,36 @@ h1 {
 	font-family: Calibri;
 	color: #2f2f30;
 	font-size: 50px;
+}
+
+.open_nav {
+	float: left;
+	color: white;
+	font-size: 32px;
+	margin-left: 5px;
+}
+
+.open_nav:hover {
+	cursor: pointer;
+}
+
+.nav_header {
+	position: fixed;
+	width: 100%;
+	height: 45px;
+	margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #229aad;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .15);
+    z-index: 20;
+}
+
+.icon {
+	width: 35%;
 }
 
 // INDEX PAGE
@@ -85,7 +116,7 @@ a:hover {
 	display: inline-block;
 	background: white;
 	padding: 2%;
-	height: 100%;
+	//min-height: 100%;
 	position: relative;
 }
 
@@ -111,30 +142,29 @@ a:hover {
 .recipe_page_ingredients {
 	width: 50%;
 	margin-left: 10%;
+	text-align: center;
 }
 
 .list {
 	font-size: 18px;
-	margin-left: 20px;
+	margin: 0 auto;
 	text-align:left;
-	line-height: 130%;
-}
-
-#list_directions {
-	margin-left: 35%;
+	line-height: 140%;
+	display: table;
 }
 
 .recipe_page_directions {
 	text-align: center;
-	margin: auto;
+	margin: 0 auto;
 	width: 78%;
 }
 
 
 // INDIVIDUAL INGREDIENTS/DIRECTIONS PAGES
 .ingredients_images, .directions_images {
-	margin: auto;
+	margin: 0 auto;
 	width: 50%;
+	padding-top: 4%;
 }
 
 .ing_image, .dir_image {
@@ -147,16 +177,14 @@ a:hover {
 
 .list_ing, .list_dir {
 	font-size: 18px;
-	margin: auto;
-	line-height: 130%;
-	width: 60%;
-}
-
-.list_dir {
-	width: 70%;
+	margin: 0 auto;
+	line-height: 140%;
+	text-align: left;
+	display: table;
 }
 
 .back_div {
+	height: 55px;
 	position: absolute;
 	bottom: 0;
 	border-top: 1px solid #e5e7e8;
@@ -315,10 +343,7 @@ input[type=text].search_bar {
 		text-align: center;
 	}
 	.list, #list_directions {
-		margin-left: 10%;
-		font-size: 18px;
-		text-align: left;
-		line-height: 130%;
+		font-size: 20px;
 	}
 	.secondary_header {
 		border-bottom: 1px solid #b5b6b7;
@@ -335,8 +360,8 @@ input[type=text].search_bar {
 		width: 100%;
 		height: 40px;
 	}
-	.list_dir {
-		font-size: 14px;
+	.list_ing, .list_dir {
+		font-size: 20px;
 	}
 	.form_new {
 		width: 90%;
@@ -349,6 +374,7 @@ input[type=text].search_bar {
 		display: block;
 		padding-bottom: 10px;
 		margin-top: 30px;
+		text-align: left;
 	}
 	.new_input {
 		width: 95%;
@@ -387,7 +413,22 @@ input[type=text].search_bar {
 		width: 91%;
 		margin-left: 1%;
 	}
-
+	.nav_header {
+		height: 50px;
+		margin: 0;
+	}
+	.index_page {
+		padding-top: 10%;
+	}
+	.open_nav {
+		font-size: 38px;
+	}
+	.icon {
+		width: 70%;
+	}
+	.ingredients_images, .directions_images {
+		padding-top: 10%;
+	}
 }
 
 @media only screen and (max-width:600px) {

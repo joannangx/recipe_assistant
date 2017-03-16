@@ -9,8 +9,14 @@
 	%h2{:class => "indiv_pages_header"} Directions for #{recipe["RecipeName"]}
 	%div{:class => "list_dir"}
 		- directions.each do |d|
-			= simple_format(d["Directions"])
+			- directions = "\n" + d["Directions"]
+			- directions = directions.gsub( / *\n+/, "\n- " )
+			= simple_format(directions)
 			%br
+	%br
+	%br
+	%br
+	%br
 	%br
 	%br
 	%br

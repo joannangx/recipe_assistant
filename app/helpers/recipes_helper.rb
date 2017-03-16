@@ -6,10 +6,6 @@ module RecipesHelper
   					table_name: "Recipes"
   				})[0]
 	end
-	
-	def get_recipe_name
-
-	end
 
 	def get_recipe_attr(recipeName, attribute)
 		dynamodb = Aws::DynamoDB::Client.new

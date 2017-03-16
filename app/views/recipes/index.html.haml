@@ -13,6 +13,10 @@
 
 = render 'shared/new'
 
+%div{:class => "nav_header"}
+	%div{:class => "open_nav"}
+		<span class="open_nav" onclick="openNav()">&#9776;</span>
+%br
 %div{:class => "index_page"}
 	%h1 Recipe Assistant
 	= text_field :recipe, :search, :placeholder => "Search", :class => "search_bar"
