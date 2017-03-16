@@ -1,7 +1,5 @@
 $(document).ready(function() {
-	$('.recipe_pages').hide();
-	$('.ingredients_pages').hide();
-  $('.directions_pages').hide();
+	$('.pages').hide();
 });
 
 $(document).ready(function show_page() {
@@ -11,11 +9,26 @@ $(document).ready(function show_page() {
       div = "#recipe_"
     } else if ($(this).data("page") == "ingredients") {
       div = "#ingredients_"
-    } else {
+    } else if ($(this).data("page") == "directions") {
       div = "#directions_"
+    } else {
+      div = "#new_page"
     }
     div += $(this).data("id");
-		$('.index_page').hide();
 		$(div).slideDown(300);
+    $('.back_div').hide();
+    $('.back').hide();
+    $('.back').show(300);
+    $('.back_div').show(300);
+    $('.index_page').hide();
 	});
 });
+
+$(document).ready(function hide_page() {
+  $('.back').on('click', function() {
+    $('.index_page').show();
+    $(this).hide(50);
+    $(this).parent().parent().slideUp(300);
+  });
+});
+

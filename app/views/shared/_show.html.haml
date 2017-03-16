@@ -1,5 +1,5 @@
 - r_name = recipe["RecipeName"].parameterize.underscore
-%div{:class => "recipe_pages", :id => "recipe_#{r_name}"}
+%div{:class => "pages recipe_pages", :id => "recipe_#{r_name}"}
 	%h1= recipe["RecipeName"]
 	%br
 	%div{:class => "food_wrap"}
@@ -8,19 +8,24 @@
 				= image_tag(recipe["Image_URL"], :class => "recipe_page_image")
 			- else
 				= image_tag("food.png", :class => "recipe_page_gen")
-		%br
 		%div{:class => "recipe_page_ingredients"}
-			%h2 Ingredients
+			%h2{:class => "secondary_header"} Ingredients
 			%div{:class => "list"}
 				- ingredients.each do |i|
-					= simple_format(i["Ingredients"])
-					%br
-					%br
-	%br
+					= simple_format(i["Ingredients"])	
+		%br
 	%br
 	%div{:class => "recipe_page_directions"}
-		%h2 Directions
+		%h2{:class => "secondary_header"} Directions
 		%div{:class => "list", :id => "list_directions"}
 			- directions.each do |d|
 				= simple_format(d["Directions"])
-				%br
+	%br
+	%br
+	%br
+	%br
+	%br
+	%br
+	%div{:class => "back_div"}
+		= link_to image_tag("back.png"), "#", :class => "back"
+	

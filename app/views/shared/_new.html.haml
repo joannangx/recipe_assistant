@@ -1,15 +1,41 @@
-%h1 Add a new Recipe!
-
-= form_tag :action => 'add', :method => :get do
-	= label :recipe, :recipeName, 'Dish Name'
-	= text_field :recipe, :recipeName
+%div{:class => "pages new_page", :id => "new_page"}
 	%br
-	= label :recipe, :ingredients, 'Ingredients'
-	= text_area :recipe, :ingredients
+	%h2{:class => "indiv_pages_header"} Add a new Recipe!
 	%br
-	= label :recipe, :directions
-	= text_area :recipe, :directions
+	%div{:class => "form_new"}
+		= form_tag :action => 'add', :method => :get do
+			%div{:class => "new_div"}
+				= label :recipe, :recipeName, 'Dish Name', :class => "new_label"
+				= text_field :recipe, :recipeName, :class => "new_input"
+			%br
+			%div{:class => "new_div"}
+				= label :recipe, :ingredients, 'Ingredients', :class => "new_label"
+				= text_area :recipe, :ingredients, :class => "new_input"
+			%br
+			%div{:class => "new_div"}
+				= label :recipe, :directions, :class => "new_label"
+				= text_area :recipe, :directions, :class => "new_input"
+			%br
+			= image_tag("image_upload.png", :class => "upload_link")
+			= label :recipe, :image_URL, "Upload an image of your recipe", :class => "upload_label"
+			%br
+			%br
+			%br
+			= submit_tag 'Add Recipe'
 	%br
-	= "upload image"
 	%br
-	= submit_tag 'Add Recipe'
+	%br
+	%br
+	%br
+	%br
+	%br
+	%br
+	%br
+	%br
+	%br
+	%br
+	%br
+	%br
+	%br
+	%div{:class => "back_div"}
+		= link_to image_tag("back.png"), "#", :class => "back"
