@@ -1,7 +1,22 @@
-%h1 Recipe Assistant
-%br
-%div{:class => "all_recipes"}
+%div{:class => "index_page"}
+	%h1 Recipe Assistant
+	%br
+	%div{:class => "all_recipes"}
+		- @recipes.each do |recipe|
+			= render 'shared/recipe', :recipe => recipe
+	%br
+	= link_to image_tag("add.jpg", :class => "add_button"), new_path, method: :get
+	%br
+%div{:class => "show_recipes"}
 	- @recipes.each do |recipe|
-		= render 'shared/recipe', :recipe => recipe
-%br
-= link_to image_tag("add.jpg", :class => "add_button"), new_path, method: :get
+		- ingredients = get_recipe_attr(recipe["RecipeName"], "Ingredients")
+		- directions = get_recipe_attr(recipe["RecipeName"], "Directions")
+		= render 'shared/show', :recipe => recipe, :ingredients => ingredients, :directions => directions
+%div{:class => "show_ingredients"}
+	- @recipes.each do |recipe|
+		- ingredients = get_recipe_attr(recipe["RecipeName"], "Ingredients")
+		= render 'shared/ingredients', :recipe => recipe, :ingredients => ingredients
+%div{:class => "show_directions"}
+	- @recipes.each do |recipe|
+		- directions = get_recipe_attr(recipe["RecipeName"], "Directions")
+		= render 'shared/directions', :recipe => recipe, :directions => directions

@@ -13,6 +13,8 @@ h1 {
 	font-size: 50px;
 }
 
+
+// INDEX PAGE
 .all_recipes {
 	width: 60%;
 	margin: auto;
@@ -71,6 +73,78 @@ a:hover {
 	padding-right: 21%;
 }
 
+
+// INDIVIDUAL RECIPE PAGES
+.recipe_pages, .ingredients_pages, .directions_pages {
+	width: 65%;
+	margin: auto;
+	background: white;
+	padding: 30px;
+}
+
+.food_wrap {
+	display: flex;
+}
+
+.recipe_page_images {
+	width: 40%;
+	margin-left: 5%;
+}
+
+.recipe_page_image, .recipe_page_gen {
+	width: 100%;
+}
+
+.h2 {
+	font-size: 30px;
+}
+
+.recipe_page_ingredients {
+	width: 50%;
+	margin-left: 10%;
+}
+
+.list {
+	font-size: 18px;
+	margin-left: 20px;
+	text-align:left;
+	line-height: 130%;
+}
+
+#list_directions {
+	margin-left: 35%;
+}
+
+.recipe_page_directions {
+	text-align: center;
+	margin: auto;
+	width: 78%;
+}
+
+
+// INDIVIDUAL INGREDIENTS/DIRECTIONS PAGES
+.ingredients_images, .directions_images {
+	margin: auto;
+	width: 50%;
+}
+
+.ing_image, .dir_image {
+	width: 100%;
+}
+
+.indiv_pages_header {
+	text-align: center;
+}
+
+.list_ing, .list_dir {
+	font-size: 18px;
+	margin: auto;
+	line-height: 130%;
+	width: 60%;
+}
+
+
+// Responsiveness for smaller screens
 @media only screen and (max-width:900px) {
     .all_recipes {
         width: 100%;

@@ -1,0 +1,15 @@
+%h1= @name
+%br
+= "image"
+%br
+%h2 Ingredients
+%div{:class => "ing_list"}
+	- @ingredients.each do |i|
+		= simple_format(i["Ingredients"])
+		%br
+%br
+%h2 Directions
+%div{:class => "dir_list"}
+	- @directions.each do |d|
+		= simple_format(d["Directions"])
+		%br

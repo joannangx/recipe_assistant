@@ -1,0 +1,12 @@
+- r_name = recipe["RecipeName"].parameterize.underscore
+%div{:class => "directions_pages", :id => "directions_#{r_name}"}
+	%div{:class => "directions_images"}
+		- if !recipe["Image_URL"].nil?
+			= image_tag(recipe["Image_URL"], :class => "dir_image")
+		- else
+			= image_tag("food.png", :class => "dir_image")
+	%h2{:class => "indiv_pages_header"} Directions for #{recipe["RecipeName"]}
+	%div{:class => "list_dir"}
+		- directions.each do |d|
+			= simple_format(d["Directions"])
+			%br

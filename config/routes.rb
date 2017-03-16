@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'recipe' => 'recipes#recipe'
+  get 'show' => 'recipes#show'
   get 'ingredients' => 'recipes#ingredients'
   get 'directions' => 'recipes#directions'
   get 'new' => 'recipes#new'
