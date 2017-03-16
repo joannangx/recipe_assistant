@@ -1,89 +1,32 @@
 class RecipesController < ApplicationController
-  
-  def index
-  	dynamodb = Aws::DynamoDB::Client.new
+  include RecipesHelper
 
-  	@recipes = dynamodb.scan({
-  		table_name: "Recipes"
-  		})[0]
+  def index
+  	@recipes = get_all_recipes()
   end
 
   def recipe
-  	dynamodb = Aws::DynamoDB::Client.new
-
   	@name = params[:dish]
-
-  	@ingredients = dynamodb.scan({
-  		table_name: "Recipes",
-  		attributes_to_get: ["Ingredients"],
-  		select: "SPECIFIC_ATTRIBUTES",
-  		scan_filter: {
-  			"RecipeName" => {
-  				attribute_value_list: [params[:dish]],
-  				comparison_operator: "EQ"
-  			}
-  		}
-  		})[0]
-
-  	@directions = dynamodb.scan({
-  		table_name: "Recipes",
-  		attributes_to_get: ["Directions"],
-  		select: "SPECIFIC_ATTRIBUTES",
-  		scan_filter: {
-  			"RecipeName" => {
-  				attribute_value_list: [params[:dish]],
-  				comparison_operator: "EQ"
-  			}
-  		}
-  		})[0]
+  	@ingredients = get_recipe_attr(@name, "Ingredients")
+  	@directions = get_recipe_attr(@name, "Directions")
+    @image = get_recipe_attr(@name, "Image_URL")
   end	
 
   def ingredients
-  	dynamodb = Aws::DynamoDB::Client.new
-
-  	@ingredients = dynamodb.scan({
-  		table_name: "Recipes",
-  		attributes_to_get: ["Ingredients"],
-  		select: "SPECIFIC_ATTRIBUTES",
-  		scan_filter: {
-  			"RecipeName" => {
-  				attribute_value_list: [params[:dish]],
-  				comparison_operator: "EQ"
-  			}
-  		}
-  		})[0]
+    @ingredients = get_recipe_attr(params[:dish], "Ingredients")
+    puts @ingredients
   end
 
   def directions
-  	dynamodb = Aws::DynamoDB::Client.new
-
-  	@directions = dynamodb.scan({
-  		table_name: "Recipes",
-  		attributes_to_get: ["Directions"],
-  		select: "SPECIFIC_ATTRIBUTES",
-  		scan_filter: {
-  			"RecipeName" => {
-  				attribute_value_list: [params[:dish]],
-  				comparison_operator: "EQ"
-  			}
-  		}
-  		})[0]
+    @directions = get_recipe_attr(params[:dish], "Directions")
   end	
 
   def new
   end	
 
   def add
-  	dynamodb = Aws::DynamoDB::Client.new
-
-  	to_add = dynamodb.put_item({
-  		table_name: "Recipes", 
-  		item: {
-  			"RecipeName" => params["recipe"]["recipeName"],
-  			"Ingredients" => params["recipe"]["ingredients"],
-  			"Directions" => params["recipe"]["directions"],
-  		},
-  	})
+  	add_recipe_to_table("Recipes", params["recipe"]["recipeName"], params["recipe"]["ingredients"], 
+      params["recipe"]["directions"])
   	redirect_to root_path
   end
 

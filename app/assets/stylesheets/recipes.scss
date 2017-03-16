@@ -8,10 +8,13 @@ body {
 
 h1 {
 	text-align: center;
+	font-family: Calibri;
+	color: #2f2f30;
+	font-size: 50px;
 }
 
 .all_recipes {
-	width: 50%;
+	width: 60%;
 	margin: auto;
 	padding: 10px;
 }
@@ -21,8 +24,78 @@ h1 {
 	background: #f9fbfc;
 	padding: 20px;
 	border-bottom: 1px solid #b5b6b7;
+	display: flex;
 }
 
 .recipe_image {
+	margin: auto;
+	width: 100%;
+}
+
+.recipe_image_generic {
+	margin: auto;
+	width: 80%;
+	padding-left: 9%;
+}
+
+.image_box {
 	width: 15%;
+}
+
+.name_box {
+	width: 40%;
+	margin: auto;
+	font-size: 25px;
+	font-family: Calibri;
+	padding-left: 20px;
+}
+
+.ingredients_box, .directions_box {
+	width: 15%;
+	margin: auto;
+}
+
+a {
+	text-decoration: none;
+	color: #39393a;
+}
+
+a:hover {
+	color: #b3b3b7;
+	
+}
+
+.add_button {
+	width: 4%;
+	float: right;
+	padding-right: 21%;
+}
+
+@media only screen and (max-width:900px) {
+    .all_recipes {
+        width: 100%;
+        padding: 0px;
+    }
+    .image_box {
+    	width: 25%;
+    }
+    .name_box {
+    	width: 40%;
+    	font-size: 30px;
+    	padding-left: 10px;
+    }
+    .ingredients_box, .directions_box {
+    	width: 10%;
+    	font-size: 10px;
+    }
+    .add_button {
+    	width: 15%;
+    	padding-right: 3%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+	.name_box {
+    	font-size: 20px;
+    }
 }

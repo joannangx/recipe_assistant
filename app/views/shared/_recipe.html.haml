@@ -1,8 +1,12 @@
 %div{:class => "dish"}
-	- if !recipe["Image_URL"].nil?
-		= image_tag(recipe["Image_URL"], :class => "recipe_image")
-	- else
-		= "IMAGE"
-	= link_to recipe["RecipeName"], recipe_path(:dish => recipe["RecipeName"]), method: :get
-	= link_to "ingredients", ingredients_path(:dish => recipe["RecipeName"]), method: :get
-	= link_to "directions", directions_path(:dish => recipe["RecipeName"]), method: :get
+	%div{:class => "image_box"}
+		- if !recipe["Image_URL"].nil?
+			= image_tag(recipe["Image_URL"], :class => "recipe_image")
+		- else
+			= image_tag("food.png", :class => "recipe_image_generic")
+	%div{:class => "name_box"}
+		= link_to recipe["RecipeName"], recipe_path(:dish => recipe["RecipeName"]), method: :get, :class => "recipe_name"
+	%div{:class => "ingredients_box"}
+		= link_to "ingredients", ingredients_path(:dish => recipe["RecipeName"]), method: :get, :class => "list_ingredients"
+	%div{:class => "directions_box"}
+		= link_to "directions", directions_path(:dish => recipe["RecipeName"]), method: :get, :class => "list_directions"
