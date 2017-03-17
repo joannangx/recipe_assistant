@@ -1,5 +1,8 @@
 - r_name = recipe["RecipeName"].parameterize.underscore
 %div{:class => "pages recipe_pages", :id => "recipe_#{r_name}"}
+	%br
+	= text_field :recipe, :search, :placeholder => "Search", :class => "search_bar"
+	%br
 	%h1= recipe["RecipeName"]
 	%br
 	%div{:class => "food_wrap"}
@@ -12,17 +15,17 @@
 			%h2{:class => "secondary_header"} Ingredients
 			%div{:class => "list"}
 				- ingredients.each do |i|
-					- ingredients = "\n" + i["Ingredients"]
-					- ingredients = ingredients.gsub( / *\n+/, "\n- " )
-					= simple_format(ingredients)
+					/- ingredients = "\n" + i["Ingredients"]
+					/- ingredients = ingredients.gsub( / *\n+/, "\n- " )
+					= simple_format(i["Ingredients"])
 	%br
 	%div{:class => "recipe_page_directions"}
 		%h2{:class => "secondary_header"} Directions
 		%div{:class => "list", :id => "list_directions"}
 			- directions.each do |d|
-				- directions = "\n" + d["Directions"]
-				- directions = directions.gsub( / *\n+/, "\n- " )
-				= simple_format(directions)
+				/- directions = "\n" + d["Directions"]
+				/- directions = directions.gsub( / *\n+/, "\n- " )
+				= simple_format(d["Directions"])
 	%br
 	%br
 	%br

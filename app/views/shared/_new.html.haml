@@ -6,15 +6,15 @@
 		= form_tag :action => 'add', :method => :get do
 			%div{:class => "new_div"}
 				= label :recipe, :recipeName, 'Dish Name', :class => "new_label"
-				= text_field :recipe, :recipeName, :class => "new_input"
+				= text_field :recipe, :recipeName, :placeholder => "Lasagna", :class => "new_input"
 			%br
 			%div{:class => "new_div"}
 				= label :recipe, :ingredients, 'Ingredients', :class => "new_label"
-				= text_area :recipe, :ingredients, :class => "new_input"
+				= text_area :recipe, :ingredients, :placeholder => "Place each new ingredient on a new line. Ex.\nLasagna noodles\nTomato Sauce\nCheese", :class => "new_input"
 			%br
 			%div{:class => "new_div"}
 				= label :recipe, :directions, :class => "new_label"
-				= text_area :recipe, :directions, :class => "new_input"
+				= text_area :recipe, :directions, :placeholder => "Place each step on a new line. Ex.\nPrepare the lasagna\nCook the lasagna\nEat the lasagna", :class => "new_input"
 			%br
 			= image_tag("image_upload.png", :class => "upload_link")
 			= label :recipe, :image_URL, "Upload an image of your recipe", :class => "upload_label"

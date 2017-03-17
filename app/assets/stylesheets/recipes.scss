@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html, body {
-	//background: #d9eef9;
-	background: #f2f5f7;
+	background: #d9eef9;
+	//background: #f2f5f7;
 	min-height: 100%;
 	text-align: center;
 	font-family: Athelas;
@@ -105,11 +105,11 @@ a:hover {
 }
 
 .add_button {
-	//width: 4%;
-	height: 35px;
+	width: 4%;
+	//height: 35px;
 	float: right;
-	//padding-right: 21%;
-	padding-right: 20%;
+	padding-right: 21%;
+	//padding-right: 20%;
 }
 
 
@@ -303,6 +303,14 @@ input[type=text].search_bar {
 	border: 2px solid #b5cde5;
 }
 
+::-webkit-input-placeholder{
+	font-size: 11px;
+	font-style: italic;
+}
+
+.search_bar::-webkit-input-placeholder{
+	font-size: 16px;
+}
 
 // Responsiveness for smaller screens
 @media only screen and (max-width:900px) {
@@ -323,10 +331,10 @@ input[type=text].search_bar {
     	font-size: 10px;
     }
     .add_button {
-    	//width: 15%;
-    	height: 40px;
-    	//padding-right: 3%;
-    	padding-right: 1%;
+    	width: 15%;
+    	//height: 40px;
+    	padding-right: 3%;
+    	//padding-right: 1%;
     }
     .pages {
     	width: 100%;
